@@ -46,43 +46,72 @@
     
     [self setAdjustsImageWhenHighlighted:NO];    
     
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"DCSKit"
+                                                           ofType:@"bundle"];
+    NSString *resourcesPath = [bundlePath stringByAppendingFormat:@"/images/"];
+    
     UIImage *plain;
     UIImage *pressed;
-    UIImage *confirm = [UIImage imageNamed:@"PurchaseConfirmButton.png"];
+    NSString *filename;
+    NSString *imagePath;
+
+    filename = @"PurchaseConfirmButton.png";
+    imagePath = [resourcesPath stringByAppendingString:filename];
+    UIImage *confirm = [UIImage imageWithContentsOfFile:imagePath];
     confirm = [confirm stretchableImageWithLeftCapWidth:3 topCapHeight:5];
-    NSString *filename = @"PurchaseConfirmButtonPressed.png";
-    UIImage *pressedConfirm = [UIImage imageNamed:filename];
+
+    filename = @"PurchaseConfirmButtonPressed.png";
+    imagePath = [resourcesPath stringByAppendingString:filename];
+    UIImage *pressedConfirm = [UIImage imageWithContentsOfFile:imagePath];
     pressedConfirm = [pressedConfirm stretchableImageWithLeftCapWidth:3
                                                          topCapHeight:5];
     
     switch (priceButtonStyle) {
         case DCSPriceButtonStylePlain:
-            plain = [UIImage imageNamed:@"PurchaseButton.png"];
+            filename = @"PurchaseButton.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            plain = [UIImage imageWithContentsOfFile:imagePath];
             plain = [plain stretchableImageWithLeftCapWidth:3 topCapHeight:5];
-            pressed = [UIImage imageNamed:@"PurchaseButtonPressed.png"];
+
+            filename = @"PurchaseButtonPressed.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            pressed = [UIImage imageWithContentsOfFile:imagePath];
             pressed = [pressed stretchableImageWithLeftCapWidth:3
                                                    topCapHeight:5];
             break;
             
         case DCSPriceButtonStylePlus:
-            plain = [UIImage imageNamed:@"PurchasePlusButton.png"];
+            filename = @"PurchasePlusButton.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            plain = [UIImage imageWithContentsOfFile:imagePath];
             plain = [plain stretchableImageWithLeftCapWidth:10 topCapHeight:5];
-            pressed = [UIImage imageNamed:@"PurchasePlusButtonPressed.png"];
+            
+            filename = @"PurchasePlusButtonPressed.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            pressed = [UIImage imageWithContentsOfFile:imagePath];
             pressed = [pressed stretchableImageWithLeftCapWidth:10
-                                                   topCapHeight:5];            
+                                                   topCapHeight:5];         
             break;
             
         case DCSPriceButtonStyleBlue:
-            plain = [UIImage imageNamed:@"PurchaseButtonBlue.png"];
+            filename = @"PurchaseButtonBlue.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            plain = [UIImage imageWithContentsOfFile:imagePath];
             plain = [plain stretchableImageWithLeftCapWidth:3 topCapHeight:7];
-            pressed = [UIImage imageNamed:@"PurchaseButtonBluePressed.png"];
+            
+            filename = @"PurchaseButtonBluePressed.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            pressed = [UIImage imageWithContentsOfFile:imagePath];
             pressed = [pressed stretchableImageWithLeftCapWidth:3
                                                    topCapHeight:7];
             break;
             
         case DCSPriceButtonStyleAlreadyPurchased:
-            plain = [UIImage imageNamed:@"PurchasedAlready.png"];
+            filename = @"PurchasedAlready.png";
+            imagePath = [resourcesPath stringByAppendingString:filename];
+            plain = [UIImage imageWithContentsOfFile:imagePath];
             plain = [plain stretchableImageWithLeftCapWidth:3 topCapHeight:5];
+
             pressed = plain;
             UIColor *grayColor = [UIColor colorWithRed:0.604
                                                  green:0.612
