@@ -24,14 +24,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 147CF30F1126A41B001DE1E6 /* DCSKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libDCSKit.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = DCSKit;
 		};
 		147CF31E1126A4A4001DE1E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 147CF30F1126A41B001DE1E6 /* DCSKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* DCSKit */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = DCSKit;
 		};
 /* End PBXContainerItemProxy section */
