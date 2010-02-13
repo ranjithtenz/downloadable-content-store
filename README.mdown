@@ -1,0 +1,48 @@
+Downloadable Content Store
+==========================
+
+This project is a collection of code that helps fill in the gaps between StoreKit, your content, and your UI.  This includes a backend server to provide content, UI elements to display a store, and a client library to communicate between them.  It also includes [a reference implementation of such a store][reference-implementation].  Downloadable Content Store is derived from the [Law Store iPhone app][], which is designed to help lawyers and law students quickly search, buy, and browse legal content.
+
+
+Adding DCSKit to your project
+=============================
+
+DCSKit is compiled as a static library, and the easiest way to add it to your project is to use Xcode's "dependent project" facilities.  Here is how:
+
+1. Clone the git repository: `git clone git://github.com/lemnar/downloadable-content-store.git`.  Make sure you store the repository in a permanent place because Xcode will need to reference the files every time you compile your project.
+
+2. Locate the "DCSKit.xcodeproj" file under "client/DCSKit".  Drag DCSKit.xcodeproj and drop it onto the root of your Xcode project's "Groups and Files"  sidebar.  A dialog will appear -- make sure "Copy items" is unchecked and "Reference Type" is "Relative to Project" before clicking "Add".
+
+3. Now you need to link the DCSKit static library to your project.  Click the "DCSKit.xcodeproj" item that has just been added to the sidebar.  Under the "Details" table, you will see a single item: libDCSKit.a.  Check the checkbox on the far right of libDCSKit.a.
+
+4. Now you need to add DCSKit as a dependency of your project, so Xcode compiles it whenever you compile your project.  Expand the "Targets" section of the sidebar and double-click your application's target.  Under the "General" tab you will see a "Direct Dependencies" section.  Click the "+" button, select "DCSKit", and click "Add Target".
+
+5. Now you need to add the bundle of images and strings to your app.  Locate "DCSKit.bundle" under "client/DCSKit" and drag and drop it into your project.  A dialog will appear -- make sure "Create Folder References" is selected,  "Copy items" is unchecked, and "Reference Type" is "Relative to Project" before clicking "Add".
+
+6. Finally, we need to tell your project where to find the DCSKit headers.  Open your "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click it.  Add the relative path from your project's directory to the "client/DCSKit" directory.
+
+7. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and add `-ObjC` and `-all_load` to the list of flags.
+
+8. You're ready to go.  Just `#import <DCSKit/DCSKit.h>` anywhere you want to use DCSKit classes in your project.
+
+
+What's in DCSKit?
+=================
+                  
+Price Button
+------------
+
+[DCSPriceButton][] emulates Apple's [SUPriceButton][], while [DCSTouchCaptureView][] emulates Apple's [SUTouchCaptureView][].  The two can be used together to create "Buy Now" buttons that behave like Apple's.  At first, the button displays the price, but tapping on it animates it into a purchase button.  Tapping on it again confirms the purchase, but tapping elsewhere restores the button to its original state.  This behavior is implemented in [the reference client][reference-implementation].
+
+
+[Law Store iPhone app]: http://www.lawstoreapp.com/
+
+[reference-implementation]: http://github.com/lemnar/downloadable-content-store/tree/master/client/DownloadableContentStore/
+
+[DCSPriceButton]: http://github.com/lemnar/downloadable-content-store/blob/master/client/DCSKit/DCSKit/DCSPriceButton.h
+
+[SUPriceButton]: http://seriot.ch/resources/dynamic_iPhone_headers/3_0/SUPriceButton.h
+
+[DCSTouchCaptureView]: http://github.com/lemnar/downloadable-content-store/blob/master/client/DCSKit/DCSKit/DCSTouchCaptureView.h
+
+[SUTouchCaptureView]: http://seriot.ch/resources/dynamic_iPhone_headers/3_0/SUTouchCaptureView.h
