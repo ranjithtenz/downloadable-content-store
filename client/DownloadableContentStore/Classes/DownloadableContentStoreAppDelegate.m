@@ -28,9 +28,20 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(windowDidBecomeHidden:)
+                   name:UIWindowDidBecomeHiddenNotification
+                 object:nil];
     
     // Add the tab bar controller's current view as a subview of the window
     [window addSubview:tabBarController.view];
+}
+
+- (void)windowDidBecomeHidden:(UIWindow *)hiddenWindow {
+    if (hiddenWindow != window) {
+        [window makeKeyAndVisible];
+    }
 }
 
 
@@ -48,6 +59,7 @@
 
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [tabBarController release];
     [window release];
     [super dealloc];

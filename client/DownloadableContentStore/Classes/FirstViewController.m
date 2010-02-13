@@ -23,6 +23,8 @@
 
 @implementation FirstViewController
 
+@synthesize priceButton, guardWindow;
+
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -40,12 +42,47 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DCSPriceButtonStyle style = DCSPriceButtonStyleBlue;
+    DCSPriceButton *button = [DCSPriceButton priceButtonWithStyle:style];
+    [button setFrame:CGRectMake(64, 64, 1, 1)];
+    [button setTitle:@"$0.99"];
+    [button setConfirmationTitle:@"BUY NOW"];
+    [button addTarget:self
+               action:@selector(buttonTapped:)
+     forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    [self setPriceButton:button];
+    [[self view] addSubview:[self priceButton]];
+
+    CGRect screenFrame = [[UIScreen mainScreen] bounds];
+    UIWindow *window = [[UIWindow alloc] initWithFrame:screenFrame];
+    DCSTouchCaptureView *captureView = [DCSTouchCaptureView alloc];
+    [captureView initWithFrame:screenFrame];
+    [captureView setPassThroughViews:[NSArray arrayWithObject:button]];
+    [captureView addTarget:self
+                    action:@selector(cancelConfirmation:)
+          forControlEvents:UIControlEventTouchDown];
+    [window addSubview:captureView];
+    [self setGuardWindow:window];
 }
-*/
+
+- (IBAction)buttonTapped:(id)sender {
+    if ([priceButton isShowingConfirmation]) {
+        NSLog(@"Buy now!");
+    } else {
+        [[self guardWindow] makeKeyAndVisible];
+        NSTimeInterval duration = [DCSPriceButton defaultAnimationDuration];
+        [[self priceButton] setShowingConfirmation:YES duration:duration];
+    }
+}
+
+- (IBAction)cancelConfirmation:(id)sender {
+    [[self guardWindow] setHidden:YES];
+    NSTimeInterval duration = [DCSPriceButton defaultAnimationDuration];
+    [[self priceButton] setShowingConfirmation:NO duration:duration];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -69,6 +106,8 @@
 
 
 - (void)dealloc {
+    [priceButton release];
+    [guardWindow release];
     [super dealloc];
 }
 

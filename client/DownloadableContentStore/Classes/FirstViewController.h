@@ -19,10 +19,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DCSKit/DCSKit.h>
 
 
 @interface FirstViewController : UIViewController {
-
+  @private
+    DCSPriceButton *priceButton;
+    UIWindow *guardWindow;
 }
+
+@property (nonatomic, retain) DCSPriceButton *priceButton;
+@property (nonatomic, retain) UIWindow *guardWindow;
+
+- (IBAction)buttonTapped:(id)sender;
+- (IBAction)cancelConfirmation:(id)sender;
 
 @end

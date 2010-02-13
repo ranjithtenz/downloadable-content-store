@@ -28,4 +28,6 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
+- (void)windowDidBecomeHidden:(UIWindow *)hiddenWindow;
+
 @end
