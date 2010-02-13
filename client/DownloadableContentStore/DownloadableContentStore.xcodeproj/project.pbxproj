@@ -268,7 +268,7 @@
 					"-ObjC",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -286,7 +286,7 @@
 					"-ObjC",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
