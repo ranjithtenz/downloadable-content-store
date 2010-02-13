@@ -7,11 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147CF3741126AC3C001DE1E6 /* DCSPriceButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 147CF3701126AC3C001DE1E6 /* DCSPriceButton.h */; };
+		147CF3751126AC3C001DE1E6 /* DCSPriceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 147CF3711126AC3C001DE1E6 /* DCSPriceButton.m */; };
+		147CF3761126AC3C001DE1E6 /* DCSTouchCaptureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 147CF3721126AC3C001DE1E6 /* DCSTouchCaptureView.h */; };
+		147CF3771126AC3C001DE1E6 /* DCSTouchCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 147CF3731126AC3C001DE1E6 /* DCSTouchCaptureView.m */; };
+		147CF38A1126ACD3001DE1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147CF3891126ACD3001DE1E6 /* UIKit.framework */; };
+		147CF3911126AD03001DE1E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 147CF3901126AD03001DE1E6 /* CoreGraphics.framework */; };
 		AA747D9F0F9514B9006C5449 /* DCSKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* DCSKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147CF3701126AC3C001DE1E6 /* DCSPriceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCSPriceButton.h; path = DCSKit/DCSPriceButton.h; sourceTree = "<group>"; };
+		147CF3711126AC3C001DE1E6 /* DCSPriceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSPriceButton.m; sourceTree = "<group>"; };
+		147CF3721126AC3C001DE1E6 /* DCSTouchCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCSTouchCaptureView.h; path = DCSKit/DCSTouchCaptureView.h; sourceTree = "<group>"; };
+		147CF3731126AC3C001DE1E6 /* DCSTouchCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCSTouchCaptureView.m; sourceTree = "<group>"; };
+		147CF3891126ACD3001DE1E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		147CF3901126AD03001DE1E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AA747D9E0F9514B9006C5449 /* DCSKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCSKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libDCSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +35,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				147CF38A1126ACD3001DE1E6 /* UIKit.framework in Frameworks */,
+				147CF3911126AD03001DE1E6 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				147CF3891126ACD3001DE1E6 /* UIKit.framework */,
+				147CF3901126AD03001DE1E6 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -59,6 +75,10 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				147CF3701126AC3C001DE1E6 /* DCSPriceButton.h */,
+				147CF3711126AC3C001DE1E6 /* DCSPriceButton.m */,
+				147CF3721126AC3C001DE1E6 /* DCSTouchCaptureView.h */,
+				147CF3731126AC3C001DE1E6 /* DCSTouchCaptureView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -79,6 +99,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* DCSKit_Prefix.pch in Headers */,
+				147CF3741126AC3C001DE1E6 /* DCSPriceButton.h in Headers */,
+				147CF3761126AC3C001DE1E6 /* DCSTouchCaptureView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147CF3751126AC3C001DE1E6 /* DCSPriceButton.m in Sources */,
+				147CF3771126AC3C001DE1E6 /* DCSTouchCaptureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
