@@ -46,7 +46,7 @@
     [super viewDidLoad];
     DCSPriceButtonStyle style = DCSPriceButtonStyleBlue;
     DCSPriceButton *button = [DCSPriceButton priceButtonWithStyle:style];
-    [button setFrame:CGRectMake(64, 64, 1, 1)];
+    [button setFrame:CGRectMake(128, 64, 1, 1)];
     [button setTitle:@"$0.99"];
     [button setConfirmationTitle:@"BUY NOW"];
     [button addTarget:self
