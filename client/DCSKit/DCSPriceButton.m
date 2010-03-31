@@ -155,7 +155,7 @@
     if (title == title_) {
         return;
     }
-    [title release];
+    [title_ release];
     title_ = [title copy];
     
     // Show the title in normal states.
